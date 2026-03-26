@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🟫 MOD STUDIO 🟫 | Addons Minecraft Bedrock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a url('https://i.imgur.com/5Zf5ZfZ.png') repeat;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            image-rendering: pixelated;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        /* Entrada animada */
+        .loading-screen {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+            animation: fadeOut 2s forwards 2.5s;
+        }
+
+        .loading-title {
+            font-size: 48px;
+            color: #00ff00;
+            text-shadow: 
+                6px 6px 0 #ffcc00,
+                -6px -6px 0 #ffcc00,
+                6px -6px 0 #ffcc00,
+                -6px 6px 0 #ffcc00;
+            animation: glitch 0.8s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-4px, 4px); }
+            40% { transform: translate(4px, -4px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; pointer-events: none; }
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,255,0,0.2) 0%, transparent 70%);
+            animation: particles 8s linear infinite;
+        }
+
+        header {
+            background: linear-gradient(#3a3a3a, #1f1f1f);
+            border-bottom: 8px solid #00ff00;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 0 8px #000;
+        }
+
+        .logo {
+            font-size: 48px;
+            text-shadow: 
+                6px 6px 0 #00ff00,
+                -6px -6px 0 #00ff00,
+                6px -6px 0 #00ff00,
+                -6px 6px 0 #00ff00;
+            color: #ffcc00;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #00ff00;
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1f1f1f;
+            border: 6px solid #00ff00;
+            padding: 18px;
+            box-shadow: 8px 8px 0 #000;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translate(-8px, -8px);
+            box-shadow: 16px 16px 0 #00ff00;
+        }
+
+        .card h3 {
+            margin: 10px 0 8px;
+            color: #ffcc00;
+            font-size: 17px;
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #ddd;
+            margin-bottom: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00ff00;
+            color: #000;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 4px solid #000;
+            box-shadow: 5px 5px 0 #000;
+            transition: all 0.1s;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            background: #ffcc00;
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #000;
+        }
+
+        footer {
+            background: #1f1f1f;
+            border-top: 8px solid #00ff00;
+            padding: 35px;
+            text-align: center;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        .copyright {
+            color: #00ff00;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Entrada animada -->
+<div class="loading-screen">
+    <div class="particles"></div>
+    <div class="loading-title">🟫 MOD STUDIO 🟫</div>
+    <p style="color:#ffcc00; margin-top:20px;">Cargando addons...</p>
+</div>
+
+<header>
+    <div class="logo">🟫 MOD STUDIO 🟫</div>
+    <div class="subtitle">Addons para Minecraft Bedrock Edition</div>
+    <p style="color:#ffcc00; font-size:15px;">¡Los mejores addons gratis! (Compatible con 1.21+)</p>
+</header>
+
+<div class="container">
+    <div class="grid">
+
+        <div class="card">
+            <h3>Instant Structures v7</h3>
+            <p>Spawnea más de 100 estructuras pre-construidas con un solo ítem. Casas, árboles, granjas y mucho más.</p>
+            <a href="https://mcpedl.com/instant-structures-add-on/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Raiyon's Dynamic Light</h3>
+            <p>Luces dinámicas en ítems, bloques y mobs. Antorchas en mano secundaria + 16 colores nuevos.</p>
+            <a href="https://mcpedl.com/raiyons-dynamic-light-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Safes</h3>
+            <p>Cajas fuertes para proteger tus objetos con seguridad.</p>
+            <a href="https://mcpedl.com/safes/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Raiyon's Tree Capitator</h3>
+            <p>Tala árboles completos agachándote. Los troncos caen automáticamente.</p>
+            <a href="https://mcpedl.com/raiyons-tree-capitator-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Raiyon's More Vanilla Tools</h3>
+            <p>Herramientas vanilla mejoradas + Dragon Forge Mace con encantamientos.</p>
+            <a href="https://mcpedl.com/raiyon-s-more-tools-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Piggyback Addon</h3>
+            <p>Monta a otros jugadores si se agachan y miran hacia abajo.</p>
+            <a href="https://mcpedl.com/piggyback-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>True Experience Book</h3>
+            <p>Guarda y retira experiencia fácilmente con un libro.</p>
+            <a href="https://mcpedl.com/true-experience-book/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>WorldEdit Addon</h3>
+            <p>El editor de mundos más potente para Bedrock. Copia, pega y terraforma.</p>
+            <a href="https://mcpedl.com/world-edit-add-on/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>New Bows Addon</h3>
+            <p>Nuevos arcos con mecánicas mejoradas.</p>
+            <a href="https://mcpedl.com/new-bows-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Raiyon's More Shields</h3>
+            <p>Más escudos con diferentes protecciones y estilos.</p>
+            <a href="https://mcpedl.com/raiyons-more-shields-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Raiyon's Item Physics</h3>
+            <p>Física realista para los ítems que caen al suelo.</p>
+            <a href="https://mcpedl.com/raiyons-item-physics/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Raiyon's Java Combat</h3>
+            <p>Combate estilo Java Edition (cooldown, críticos, etc).</p>
+            <a href="https://mcpedl.com/raiyons-java-combat-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Elemental Swords</h3>
+            <p>Espadas elementales con poderes especiales.</p>
+            <a href="https://mcpedl.com/elemental-swords/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Cyber Sport Addon</h3>
+            <p>Modo deportivo cyberpunk con nuevos ítems y mecánicas.</p>
+            <a href="https://mcpedl.com/cyber-sport-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Conqueror of Villagers</h3>
+            <p>¡Conquista y domina a los aldeanos!</p>
+            <a href="https://mcpedl.com/conqueror-of-villagers/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Block Armor Addon</h3>
+            <p>Armaduras hechas con bloques normales.</p>
+            <a href="https://mcpedl.com/blockarmor-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Aplok Guns</h3>
+            <p>Armas de fuego realistas para Minecraft.</p>
+            <a href="https://mcpedl.com/aplok-guns/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Anime Waifus</h3>
+            <p>Personajes anime como mobs y seguidores.</p>
+            <a href="https://mcpedl.com/anime-waifus/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Modern Furniture Survival</h3>
+            <p>Muebles modernos para survival y decoración.</p>
+            <a href="https://mcpedl.com/modern-furniture-survival-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Backpack Plus Addon</h3>
+            <p>Mochilas mejoradas con mayor capacidad.</p>
+            <a href="https://mcpedl.com/backpack-plus-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <h3>Mutant Mobs and Creatures</h3>
+            <p>Mobs mutantes y criaturas épicas.</p>
+            <a href="https://mcpedl.com/mutant-mobs-and-creatures/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; margin:50px 0;">
+        <a href="https://linkvertise.com/770736/S8MR9o6ie8MR?o=sharing" target="_blank" class="btn" style="font-size:24px; padding:22px 50px;">
+            🔥 LINK DE APOYO (Linkvertise) 🔥
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div class="copyright">
+        © MOD STUDIO CON TODO LOS DERECHOS RESERVADO 🈯
+    </div>
+    <p>Esta página es un fan-site creado con estilo Minecraft para facilitar la descarga de addons.<br>
+    Todos los addons pertenecen a sus respectivos autores de MCPEDL.</p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🟫 MOD STUDIO 🟫 | Addons Minecraft Bedrock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a url('https://i.imgur.com/5Zf5ZfZ.png') repeat;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            image-rendering: pixelated;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        /* Entrada animada estilo Minecraft */
+        .loading-screen {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+            animation: fadeOut 2s forwards 2.5s;
+        }
+
+        .loading-title {
+            font-size: 48px;
+            color: #00ff00;
+            text-shadow: 6px 6px 0 #ffcc00, -6px -6px 0 #ffcc00, 6px -6px 0 #ffcc00, -6px 6px 0 #ffcc00;
+            animation: glitch 0.8s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-4px, 4px); }
+            40% { transform: translate(4px, -4px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; pointer-events: none; }
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,255,0,0.2) 0%, transparent 70%);
+            animation: particles 8s linear infinite;
+        }
+
+        header {
+            background: linear-gradient(#3a3a3a, #1f1f1f);
+            border-bottom: 8px solid #00ff00;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 0 8px #000;
+        }
+
+        .logo {
+            font-size: 48px;
+            text-shadow: 6px 6px 0 #00ff00, -6px -6px 0 #00ff00, 6px -6px 0 #00ff00, -6px 6px 0 #00ff00;
+            color: #ffcc00;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #00ff00;
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1f1f1f;
+            border: 6px solid #00ff00;
+            padding: 15px;
+            box-shadow: 8px 8px 0 #000;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translate(-8px, -8px);
+            box-shadow: 16px 16px 0 #00ff00;
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border: 4px solid #000;
+            image-rendering: pixelated;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            margin: 8px 0 6px;
+            color: #ffcc00;
+            font-size: 16px;
+            text-shadow: 3px 3px 0 #000;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00ff00;
+            color: #000;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 4px solid #000;
+            box-shadow: 5px 5px 0 #000;
+            transition: all 0.1s;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            background: #ffcc00;
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #000;
+        }
+
+        /* Tarjeta de Contacto */
+        .contact-card {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(#1f1f1f, #2a2a2a);
+            border: 8px solid #ffcc00;
+            margin-top: 30px;
+        }
+
+        .contact-card h2 {
+            color: #ffcc00;
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-shadow: 4px 4px 0 #000;
+        }
+
+        footer {
+            background: #1f1f1f;
+            border-top: 8px solid #00ff00;
+            padding: 35px;
+            text-align: center;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        .copyright {
+            color: #00ff00;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Pantalla de carga animada -->
+<div class="loading-screen">
+    <div class="particles"></div>
+    <div class="loading-title">🟫 MOD STUDIO 🟫</div>
+    <p style="color:#ffcc00; margin-top:20px;">Cargando addons...</p>
+</div>
+
+<header>
+    <div class="logo">🟫 MOD STUDIO 🟫</div>
+    <div class="subtitle">Addons para Minecraft Bedrock Edition</div>
+    <p style="color:#ffcc00; font-size:15px;">¡Los mejores addons gratis! (Compatible con 1.21+)</p>
+</header>
+
+<div class="container">
+    <div class="grid">
+
+        <!-- Tarjetas de addons (puedes agregar más siguiendo el mismo formato) -->
+        <div class="card">
+            <img src="https://i.imgur.com/OFCGo.jpg" alt="Instant Structures">
+            <h3>Instant Structures v7</h3>
+            <p>Spawnea más de 100 estructuras pre-construidas con un solo ítem.</p>
+            <a href="https://mcpedl.com/instant-structures-add-on/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/mIRNX.jpg" alt="Dynamic Light">
+            <h3>Raiyon's Dynamic Light</h3>
+            <p>Luces dinámicas en ítems, bloques y mobs.</p>
+            <a href="https://mcpedl.com/raiyons-dynamic-light-addon/" target="_blank" class="btn">DESCARGAR ADDON</a>
+        </div>
+
+        <!-- Aquí puedes seguir pegando las demás tarjetas que ya tenías -->
+
+    </div>
+
+    <!-- ==================== SECCIÓN DE CONTACTO ==================== -->
+    <div class="contact-card">
+        <h2>¿Tienes dudas o quieres contactarme?</h2>
+        <p style="font-size:16px; margin:20px 0 30px;">
+            Envía un correo directamente a:<br>
+            <strong style="color:#ffcc00; font-size:18px;">parraraul607@gmail.com</strong>
+        </p>
+        <a href="mailto:parraraul607@gmail.com" class="btn" style="font-size:22px; padding:20px 50px;">
+            ✉️ ENVIAR CORREO AHORA
+        </a>
+    </div>
+
+    <div style="text-align:center; margin:50px 0;">
+        <a href="https://linkvertise.com/770736/S8MR9o6ie8MR?o=sharing" target="_blank" class="btn" style="font-size:24px; padding:22px 50px;">
+            🔥 LINK DE APOYO (Linkvertise) 🔥
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div class="copyright">
+        © MOD STUDIO CON TODO LOS DERECHOS RESERVADO 🈯
+    </div>
+    <p>Esta página es un fan-site creado con estilo Minecraft para facilitar la descarga de addons.<br>
+    Todos los addons pertenecen a sus respectivos autores de MCPEDL.</p>
+</footer>
+
+</body>
+</html>
